@@ -6,15 +6,15 @@ cache:
     - node_modules/
 
 stages:
-  - test
-  - deploy_production
+  - release
 
 # Job 1:
 Test:
-  stage: test
+  stage: release
   script:
     - npm install
-    - npm run test
+    - node_modules/.bin/sequelize db:migrate
+    - node_modules/.bin/sequelize db:seed:all
 
 # Job 2:
 # Deploy to staging
@@ -22,7 +22,7 @@ Production:
   image: ruby:latest
   only:
     - master
-  stage: deploy_production
+  stage: release
   script:
     - apt-get update -qy
     - apt-get install -y ruby-dev
