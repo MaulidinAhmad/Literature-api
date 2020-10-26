@@ -14,10 +14,9 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "literature",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "use+env_variable": "DATABASE_URL",
+    "dialect": "postgres",
+    "protocol": "postgres"
+
   }
 }
