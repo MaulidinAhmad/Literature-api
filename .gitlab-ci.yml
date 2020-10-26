@@ -6,16 +6,15 @@ cache:
     - node_modules/
 
 stages:
+  - install
   - release
 
 # Job 1:
 Install:
-  stage: release
+  stage: install
   environment: production
   script:
     - npm install
-    - node_modules/.bin/sequelize db:migrate
-    - node_modules/.bin/sequelize db:seed:all
 
 # Job 2:
 # Deploy to staging
@@ -25,6 +24,8 @@ Production:
     - master
   stage: release
   script:
+    - node_modules/.bin/sequelize db:migrate
+    - node_modules/.bin/sequelize db:seed:all
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl
