@@ -3,20 +3,5 @@
     "use+env_variable": "DATABASE_URL",
     "dialect": "postgres",
     "protocol": "postgres"
-  },
-  "development": {
-    "username": "root",
-    "password": null,
-    "database": "literature",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "literature",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
   }
-
 }
