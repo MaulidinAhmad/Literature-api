@@ -15,7 +15,7 @@ Install:
   environment: production
   script:
     - npm install
-    - node_modules/.bin/sequelize db:migrate:all --config "config/config.json" --env "production"
+    - node_modules/.bin/sequelize db:migrate --config "config/config.json" --env "production"
     - node_modules/.bin/sequelize db:seed:all --config "config/config.json" --env "production"
 
 # Job 2:
