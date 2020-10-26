@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const jwtKey = process.env.JWT_KEY;
+const jwtKey = process.env.JWT_KEY || "ngodingsampekmampus0k0k";
 
 exports.authenticated = (req, res, next) => {
   let header, token;

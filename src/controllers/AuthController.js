@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 // import JWT
 const jwt = require("jsonwebtoken");
 // JWT KEY
-const jwtKey = process.env.JWT_KEY;
+const jwtKey = process.env.JWT_KEY | "ngodingsampekmampus0k0k";
 
 // Check Auth
 exports.checkAuth = async (req, res) => {
