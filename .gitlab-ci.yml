@@ -9,8 +9,9 @@ stages:
   - release
 
 # Job 1:
-Test:
+Install:
   stage: release
+  environment: production
   script:
     - npm install
     - node_modules/.bin/sequelize db:migrate
